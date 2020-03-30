@@ -1,0 +1,24 @@
+# Configure the AWS Provider
+provider "aws" {
+  region     = "us-east-1"
+  access_key = "AKIARQJRRCMFPRLWIHV5"
+  secret_key = "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"
+}
+
+# Create Private Bucket
+resource "aws_s3_bucket" "b" {
+  bucket = "nelson-neto-bucket-terraform-3"
+  acl    = "private"
+
+  tags = {
+    Name        = "My Super bucket"
+    Environment = "Prod"
+  }
+}
+
+#S3 upload File on AWS bucket
+resource "aws_s3_bucket_object" "object" {
+  bucket = "nelson-neto-bucket-terraform-2"
+  key    = "HELLO.txt"
+  source = "/home/ubuntu/terraform/HELLO.txt"
+}
