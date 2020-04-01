@@ -1,8 +1,8 @@
 # Configure the AWS Provider
 provider "aws" {
   region     = "us-east-1"
-  access_key = "AKIARQJRRCMFPRLWIHV5"
-  secret_key = "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"
+  access_key = "xxxxx"
+  secret_key = "xxxxx"
 }
 
 # Create Private Bucket
